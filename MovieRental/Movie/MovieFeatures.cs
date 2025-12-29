@@ -10,10 +10,10 @@ namespace MovieRental.Movie
 			_movieRentalDb = movieRentalDb;
 		}
 		
-		public Movie Save(Movie movie)
+		public async Task<Movie> Save(Movie movie)
 		{
 			_movieRentalDb.Movies.Add(movie);
-			_movieRentalDb.SaveChanges();
+			await _movieRentalDb.SaveChangesAsync();
 			return movie;
 		}
 

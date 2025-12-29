@@ -15,7 +15,7 @@ namespace MovieRental.Rental
 		public Rental Save(Rental rental)
 		{
 			_movieRentalDb.Rentals.Add(rental);
-			_movieRentalDb.SaveChanges();
+			_movieRentalDb.SaveChangesAsync();
 			return rental;
 		}
 
