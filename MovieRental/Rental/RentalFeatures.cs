@@ -22,7 +22,7 @@ namespace MovieRental.Rental
 		//TODO: finish this method and create an endpoint for it
 		public IEnumerable<Rental> GetRentalsByCustomerName(string customerName)
 		{
-			return [];
+			return _movieRentalDb.Rentals.Where(c => c.CustomerName == customerName);
 		}
 
 	}
