@@ -12,6 +12,7 @@ Can you help us fix some issues and implement missing features?
    Can you help us add a new entity for this? Don't forget to change the customer name field to a foreign key, and fix your previous method!
  * In the MovieFeatures class, there is a method to list all movies, tell us your opinion about it.
  * No exceptions are being caught in this api, how would you deal with these exceptions?
+    * If I was trying to avoid lots of try/catch blocks and other forms of code duplication, I would probably handle exceptions globally using ASP.NET Core global exception handling middleware, in a centralised manner.
 
 
 	## Challenge (Nice to have)
