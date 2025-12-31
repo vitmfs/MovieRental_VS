@@ -6,6 +6,7 @@ Can you help us fix some issues and implement missing features?
  * The app is throwing an error when we start, please help us. Also, tell us what caused the issue.
      * The error that appears is related to the concept of dependency injection lifetime mismatch in ASP.NET Core.The default option for AddDbContext ServiceLifetime is ServiceLifetime.Scoped. RentalFeatures is originally registered as a Singleton. The RentalFeatures class directly depends of the MovieRentalContext. A singleton service lives for the whole application lifetime, while a scoped service only lives for the duration of the request or scope. If we inject a scoped service into a singleton one this creates a situation where the singleton would hold onto one DbContext instance forever, leading to various issues.
  * The rental class has a method to save, but it is not async, can you make it async and explain to us what is the difference?
+    * When we make the method async, we ensure that the save to the database operation completes before returning, while avoiding blocking other request threads. It also improves scability under load.
  * Please finish the method to filter rentals by customer name, and add the new endpoint.
  * We noticed we do not have a table for customers, it is not good to have just the customer name in the rental.
    Can you help us add a new entity for this? Don't forget to change the customer name field to a foreign key, and fix your previous method!
