@@ -12,10 +12,10 @@ namespace MovieRental.Rental
 		}
 
 		//TODO: make me async :(
-		public Rental Save(Rental rental)
+		public async Task<Rental> SaveAsync(Rental rental)
 		{
 			_movieRentalDb.Rentals.Add(rental);
-			_movieRentalDb.SaveChangesAsync();
+			await _movieRentalDb.SaveChangesAsync();
 			return rental;
 		}
 
