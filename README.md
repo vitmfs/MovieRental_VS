@@ -11,6 +11,7 @@ Can you help us fix some issues and implement missing features?
  * We noticed we do not have a table for customers, it is not good to have just the customer name in the rental.
    Can you help us add a new entity for this? Don't forget to change the customer name field to a foreign key, and fix your previous method!
  * In the MovieFeatures class, there is a method to list all movies, tell us your opinion about it.
+    * Ignoring the fact that the method should be async, the method should not return EF Core entities directly because it couples the API with the database, making future changes harder, and it could expose or return unnecessary or unsafe information. Maybe it should return Data Transfer Objects. We should also prevent the tracking of all entities by default to save memory and for better scalability. In general, we should have layers defined (Data Access Layer, Business Logic Layer, Service Layer, etc...) to have a better separation of concerns.
  * No exceptions are being caught in this api, how would you deal with these exceptions?
     * If I was trying to avoid lots of try/catch blocks and other forms of code duplication, I would probably handle exceptions globally using ASP.NET Core global exception handling middleware, in a centralised manner.
 
